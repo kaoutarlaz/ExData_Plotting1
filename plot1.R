@@ -3,5 +3,8 @@ mydata<-data%>%filter(Date%in%c("2/2/2007", "1/2/2007"))
 mydata$Global_active_power<-as.numeric(mydata$Global_active_power)
 #plot1
 
-with(mydata,hist(Global_active_power,col=c("red"), xlab=" global active power (kilowatts)"))
+png("plot1.png", width=480, height=480)
+hist(mydata$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+
+dev.off()
 
